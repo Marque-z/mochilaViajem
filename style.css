@@ -1,0 +1,125 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.shadow {
+    width: 100vw;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+}
+
+.container {
+    width: 100vw;
+    height: 100%;
+    background-image: linear-gradient(#000a26, #011e3d, #000a26);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagem {
+    width: 30%;
+    height: 100%;
+}
+
+.formulario {
+    width: 50%;
+    height: 300px;
+    background-color: aliceblue;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 20px;
+}
+
+.campos {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+label {
+    font-size: 15pt;
+    font-family: 'Lucida Sans';
+    font-weight: 400;
+}
+
+.nome,
+.quantidade {
+    margin-bottom: 30px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid rgba(82, 82, 82, 0.8);
+}
+
+button {
+    height: 40px;
+    background-color: #28619e;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1d528a;
+}
+
+html {
+    text-align: center;
+}
+
+.imagem {
+    margin: 20px 40px 0 0;
+    width: 170px;
+    height: 180px;
+    padding-top: 80px;
+    background-color: #d84736;
+    box-shadow: inset 0 6px 0 2px #e64a3e, 0 6px 2px -2px #1a858b, 0 -93px 0 -81px #25aaa7, 0 -93px 0 -77px #3b1045, 0 -93px 0 -72px #d84736, 0 -93px 0 -68px #3b1045;
+    background-position: center 254px;
+    background-size: 305px 6px;
+    background-repeat: repeat-x;
+    border: 5px solid #410c38;
+    border-radius: 85px 85px 44px 44px;
+}
+
+.imagem:before,
+.imagem:after {
+    display: block;
+    content: '';
+    position: absolute;
+}
+
+.imagem:before {
+    height: 75px;
+    width: 118px;
+    margin-left: 22px;
+    margin-top: 58px;
+    border: 4px solid #491033;
+    border-radius: 11px;
+    box-shadow: 0 4px 0 0 #c1382e, inset 0px 4px 1px 0 #c03527;
+    content: '||';
+    color: transparent;
+    font-family: Comic Sans MS;
+    font-weight: bold;
+    z-index: 1;
+    text-shadow: rgb(0, 0, 0) -2px -86px 0px;
+    font-size: 14px;
+}
+
+.imagem:after {
+    margin-left: 67px;
+    margin-top: -30px;
+    background: #cca16a;
+    width: 26px;
+    height: 26px;
+    border: 3px solid #491033;
+    border-radius: 3px;
+    transform: rotate(45deg);
+}
