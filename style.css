@@ -51,6 +51,50 @@ label {
     font-weight: 400;
 }
 
+.item{
+    width: 250px;
+    height: 50px;
+    background-color: aliceblue;
+    margin-bottom: 25px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botaoDelete{
+    width: 40px;
+    height : 40px;
+    border-radius: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Lucida Sans Regular';
+    background-color: #000a26;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.botaoDelete:hover{
+    background-color: #07226c;
+}
+
+.numero{
+    width: 40px;
+    height : 40px;
+    background-color: #000a26;
+    color: aliceblue;
+    border-radius: 30px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Lucida Sans Regular';
+}
+
 .nome,
 .quantidade {
     margin-bottom: 30px;
