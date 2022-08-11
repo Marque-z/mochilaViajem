@@ -10,10 +10,11 @@ if(itemSalvoList != null){
 }
 
 form.addEventListener("submit", (evento) =>{
-    evento.preventDefault();
-    var nome = evento.target.elements['nome'].value;
-    var quantidade = evento.target.elements['quantidade'].value;
-    salvarDado(nome, quantidade);
+    if(evento.submitter.className == 'botaoSubmit'){
+        var nome = evento.target.elements['nome'].value;
+        var quantidade = evento.target.elements['quantidade'].value;
+        salvarDado(nome, quantidade);
+    }
 });
 
 function salvarDado(nome, quantidade) {
@@ -47,6 +48,7 @@ function salvarDado(nome, quantidade) {
 function criarElemento(nome, quantidade) {
     var novoItem = document.createElement('li');
     novoItem.classList.add("item");
+    novoItem.addEventListener('click',()=>atualizaElemento(novoItem))
 
     var botaoDelete = document.createElement('div');
     botaoDelete.classList.add("botaoDelete");
@@ -73,4 +75,30 @@ function deletarItem(botao){
     var itemSalvoAtualizado = itemSalvoList.filter((itemSalvo)=>itemSalvo.nome != item.innerHTML)
     localStorage.setItem("dadosSalvos", JSON.stringify(itemSalvoAtualizado));
     window.location.reload()
+}
+
+function atualizaElemento(elemento) {
+    var textoProduto = elemento.querySelector('h5');
+    var quantidadeProduto = elemento.querySelector('strong');
+    var botaoAlterar = document.createElement('button');
+    botaoAlterar.innerHTML = "Alterar";
+
+    document.querySelector('.nome').value = textoProduto.innerHTML;
+    document.querySelector('.quantidade').value = quantidadeProduto.innerHTML;
+
+    document.querySelector('.botaoSubmit').hidden = true;
+    document.querySelector('.campos').appendChild(botaoAlterar);
+
+    botaoAlterar.addEventListener('click', function(){
+        itemSalvoList.forEach(element=>{
+            if(element.nome == textoProduto.innerHTML){
+                element.quantidade = document.querySelector('.quantidade').value;
+                element.nome = document.querySelector('.nome').value;
+                return;
+            }
+        })
+        localStorage.setItem("dadosSalvos", JSON.stringify(itemSalvoList));
+    });
+
+
 }
